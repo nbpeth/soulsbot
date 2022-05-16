@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^2.0.1"
+    "express-multipart": "^1.0.6",
+    "http-proxy-middleware": "^2.0.1",
+    "jest": "^28.1.0",
+    "slack": "^11.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"
