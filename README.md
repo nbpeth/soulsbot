@@ -3,7 +3,8 @@ Fine Work Skeleon!
 
 Slack slash command to generate Dark Souls like template messages
 
-![soulsbotlow](https://user-images.githubusercontent.com/10249534/172015300-7fddb42c-8e00-4b13-af73-280ddb6094cc.gif)
+https://user-images.githubusercontent.com/10249534/172015398-eab60088-149f-4c64-b236-042b5e32db45.mp4
+
 
 # Configure for your Slack Workspace
 
