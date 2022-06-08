@@ -34,6 +34,12 @@ app.post("/api/v1/app", (req, res) => {
   });
 });
 
+app.get("/api/v1/app", (req, res) => {
+  // authHandler(res, req.body).then((_) => {
+    res.send(startApp(req.body));
+  // });
+});
+
 app.post("/api/v1/interact", async (req, res) => {
   const payload = JSON.parse(req.body.payload);
   authHandler(res, payload)
