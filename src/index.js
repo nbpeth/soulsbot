@@ -3,7 +3,6 @@ const app = express();
 const port = process.env.PORT || 8080;
 const { getInteraction, startApp } = require("./interaction");
 
-
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -12,13 +11,7 @@ app.get("/api/v1/health", (req, res) => {
   res.send({ feelin: "fine" });
 });
 
-// const clientId = process.env.DSC_CLIENT_ID;
-// const clientSecret = process.env.DSC_CLIENT_SECRET;
-// const signingSecret = process.env.DSC_SIGNING_SECRET;
 const authHandler = async (res, body, headers) => {
-  // const headers = req.headers;
-  // const slackSignature = headers["x-slack-signature"];
-  // const slackTimestamp = headers["x-slack-request-timestamp"];
   return new Promise((resolve, reject) => {
     const requestequestToken = body["token"];
     const slackToken = process.env.DSC_AUTH_TOKEN;

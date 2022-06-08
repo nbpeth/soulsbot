@@ -1,4 +1,4 @@
-const { messageTemplates, conjunctions, categories } = require("../content");
+const { messageTemplates, conjunctions, categories } = require("./content");
 
 const textOption = (text) => {
   return {
@@ -377,7 +377,7 @@ const replaceWildcard = (template, substitution) => {
 
 const frame = [...Array(40).keys()].map((_) => "*").join("");
 const wrapMessage = (content) => {
-  return [frame, content.join("\n"), "", frame].join("\n");
+  return content.join("\n")
 };
 
 const buildTemplateA = (getValue) => {
@@ -426,9 +426,20 @@ const getHelp = () => {
   )
 }
 
+const getAbout = () => {
+  return wrapMessage(
+    [
+      "Authored with love by Nick Peth",
+      "GitHub: https://github.com/nbpeth/soulsbot",
+      "Support: https://github.com/nbpeth/soulsbot/issues"
+    ]
+  )
+}
+
 module.exports = {
   buildMessage,
   getHelp,
+  getAbout,
   getSelectBlock,
   getTemplate,
   textOption,

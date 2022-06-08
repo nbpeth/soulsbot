@@ -1,9 +1,10 @@
-const { buildMessage, getHelp, getTemplate } = require("./templates");
+const { buildMessage, getAbout, getHelp, getTemplate } = require("./templates");
 
 const axios = require("axios");
 
 const options = {
   help: "help",
+  about: "about",
 };
 
 const action = {
@@ -18,6 +19,10 @@ const startApp = (body) => {
     case options.help:
       return {
         text: getHelp(),
+      };
+    case options.about:
+      return {
+        text: getAbout(),
       };
 
     default:
