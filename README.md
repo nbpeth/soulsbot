@@ -1,4 +1,9 @@
 # SoulsBot
+
+### Installation
+* Authorize SoulsBot for your workspace: [Add to Slack](https://ds-slack.herokuapp.com/api/v1/oauth/authorize)
+
+
 Fine Work Skeleon!
 
 Slack slash command to generate Dark Souls like template messages
