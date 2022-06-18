@@ -20,17 +20,25 @@ app.post("/api/v1/app", (req, res) => {
 });
 
 app.post("/api/v1/interact", async (req, res) => {
-  const payload = JSON.parse(req.body.payload);
+  try {
+    console.log("body", req.body);
+    const payload = JSON.parse(req.body.payload);
 
-  authHandler(res, payload, req.headers)
-    .then((body) => {
-      res.send(getInteraction(body));
-    })
-    .catch((e) => {
-      console.error("Oops!", e);
-      res.status(500);
-      res.send({ woops: "something terrible is afoot" });
-    });
+    authHandler(res, payload, req.headers)
+      .then((body) => {
+        res.send(getInteraction(body));
+      })
+      .catch((e) => {
+        console.error("Oops!", e);
+        res.status(500);
+        res.send({ woops: "something terrible is afoot" });
+      });
+  } catch (e) {
+    console.error(e);
+
+    res.status(500);
+    res.send();
+  }
 });
 
 app.listen(port, () => {

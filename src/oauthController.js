@@ -3,7 +3,9 @@ const { default: axios } = require("axios");
 
 const clientId = process.env.DSC_CLIENT_ID;
 const clientSecret = process.env.DSC_CLIENT_SECRET;
+
 const host = process.env.HOST ?? "http://localhost:8080";
+
 const redirectUrl = `${host}/api/v1/oauth/token`;
 const greatJob = `${host}/api/v1/health`;
 const slackAuthUrl = "https://slack.com/oauth/v2/authorize";
