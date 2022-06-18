@@ -30,7 +30,6 @@ module.exports = (app) => {
       code: code,
       redirect_url: greatJob,
     };
-
     const options = {
       method: "POST",
       data: qs.stringify(data),
@@ -41,14 +40,10 @@ module.exports = (app) => {
     axios(options)
       .then((authResponse) => {
         const {
-          ok,
-          app_id,
-          authed_user,
-          scope,
-          token_type,
           access_token,
-          team,
         } = authResponse.data;
+
+        console.log("authResponse", JSON.stringify(authResponse.data, null, 2))
 
         const options = {
           method: "POST",
@@ -59,7 +54,7 @@ module.exports = (app) => {
           url: slackTeamInfoUrl,
         };
 
-        axios(options)
+        return axios(options)
           .then((r) => {
             if (r.data.ok) {
               res.redirect(r.data.team.url);

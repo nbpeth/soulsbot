@@ -21,7 +21,6 @@ app.post("/api/v1/app", (req, res) => {
 
 app.post("/api/v1/interact", async (req, res) => {
   try {
-    console.log("body", req.body);
     const payload = JSON.parse(req.body.payload);
 
     authHandler(res, payload, req.headers)
@@ -35,7 +34,6 @@ app.post("/api/v1/interact", async (req, res) => {
       });
   } catch (e) {
     console.error(e);
-
     res.status(500);
     res.send();
   }
