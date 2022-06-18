@@ -43,7 +43,11 @@ module.exports = (app) => {
           access_token,
         } = authResponse.data;
 
-        console.log("authResponse", JSON.stringify(authResponse.data, null, 2))
+        const { ok, error } = authResponse;
+
+        if(!ok) {
+          return Promise.reject(error);
+        }
 
         const options = {
           method: "POST",
