@@ -44,7 +44,7 @@ module.exports = (app) => {
         } = authResponse.data;
 
         const { ok, error } = authResponse;
-        console.log("ok", ok, err)
+        console.log("ok", ok, error)
 
         if(!ok) {
           return Promise.reject(error);
