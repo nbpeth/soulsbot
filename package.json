@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@jest/globals": "^28.1.1",
     "axios": "^0.27.2",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "express-multipart": "^1.0.6",
     "http-proxy-middleware": "^2.0.1",
-    "jest": "^28.1.0",
+    "jest": "^28.1.1",
     "qs": "^6.10.5"
   },
   "scripts": {
@@ -17,5 +18,8 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest-extended": "^2.0.0"
+  }
 }

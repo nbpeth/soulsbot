@@ -24,11 +24,15 @@ const authHandler = async (res, body, headers) => {
 
     const requestequestToken = body["token"];
 
-    if (requestequestToken != slackToken) {
+    if (requestequestToken !== slackToken) {
       return reject({ status: 401, body: { you: "can't do that" } });
     }
 
     return resolve(body);
+  }).catch((e) => {
+    console.error("Oops!", e);
+    res.status(401);
+    res.send({you: "can't do that"});
   })
 };
 
