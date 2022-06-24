@@ -3,9 +3,6 @@
 ## Fine Work Skeleton!
 Slack slash command to generate Dark Souls templated messages
 
-## Installation
-* Authorize SoulsBot for your workspace: [Add to Slack](https://ds-slack.herokuapp.com/api/v1/oauth/authorize)
-
 https://user-images.githubusercontent.com/10249534/172015398-eab60088-149f-4c64-b236-042b5e32db45.mp4
 
 
